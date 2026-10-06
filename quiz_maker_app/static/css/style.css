@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #ec4899;
+  --accent: #10b981;
+  --bg-dark: #090d16;
+  --card-dark: #111827;
+  --card-border: #1f2937;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-dark);
+  color: #f3f4f6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism cards */
+.glass-card {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-interactive {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(99, 102, 241, 0.2);
+}
+
+/* Subtle glowing gradients */
+.glow-primary {
+  box-shadow: 0 0 35px -5px rgba(99, 102, 241, 0.35);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.35);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-badge {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(192, 132, 252, 0.15) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Quiz Option Button States */
+.quiz-option-btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 2px solid rgba(55, 65, 81, 0.6);
+  background: rgba(31, 41, 55, 0.4);
+}
+
+.quiz-option-btn:hover {
+  border-color: rgba(129, 140, 248, 0.6);
+  background: rgba(31, 41, 55, 0.8);
+  transform: translateX(4px);
+}
+
+.quiz-option-btn.selected {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.18);
+  box-shadow: 0 0 18px rgba(99, 102, 241, 0.3);
+}
+
+/* Pulsing Timer for Low Time */
+@keyframes timerPulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.timer-critical {
+  animation: timerPulse 1s infinite;
+  color: #f87171 !important;
+  border-color: #ef4444 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.6);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.9);
+}
+
+/* Transitions */
+.view-section {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Modal Overlay */
+.modal-overlay {
+  background: rgba(3, 7, 18, 0.75);
+  backdrop-filter: blur(8px);
+}
